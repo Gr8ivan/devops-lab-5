@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,3 +22,8 @@ jobs:
     - name: Run script
       run: |
         python hello.py
+    - name: Upload output file as an artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: output-file
+        path: output.txt
